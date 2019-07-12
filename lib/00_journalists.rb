@@ -6,22 +6,22 @@ puts journalists.size
 puts '-' * 10
 
 puts "Combien de handles comptent des chiffres?"
-puts journalists.count { |i, _| i.to_s.include?("1"||"2"||"3"||"4"||"5"||"6"||"7"||"8"||"9"||"0") }
+puts journalists.count { |i| i =~ /[\d]/ }
 
 puts '-' * 10
 
 puts "Combien de handles comptent Aude ?"
-puts journalists.count { |i, _| i.to_s.include?("aude") }
+puts journalists.count { |i, _| i.to_s.downcase.include?("aude") }
 
 puts '-' * 10
 
 puts "Combien de handles commencent par une majuscule ?"
-puts journalists.count { |i, _| i.to_s.include?("@A"||"@B"||"@C"||"@D"||"@E"||"@F"||"@G"||"@H"||"@I"||"@J"||"@K"||"@L"||"@M"||"@N"||"@O"||"@P"||"@Q"||"@R"||"@S"||"@T"||"@U"||"@V"||"@W"||"@X"||"@Y"||"@Z" ) }
+puts journalists.count { |i| i =~ /^@[A-Z]/ }
 
 puts '-' * 10
 
 puts "Combien de handles contiennent une majuscule ?"
-puts journalists.count { |i, _| i.to_s.include?("A"||"B"||"C"||"D"||"E"||"F"||"G"||"H"||"I"||"J"||"K"||"L"||"M"||"N"||"O"||"P"||"Q"||"R"||"S"||"T"||"U"||"V"||"W"||"X"||"Y"||"Z" ) }
+puts journalists.count { |i| i =~ /[A-Z]/ }
 
 puts '-' * 10
 
